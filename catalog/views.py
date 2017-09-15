@@ -31,10 +31,19 @@ def Index(request):
 
 class BookListView(generic.ListView):
     model = Book
-    context_object_name = 'my_book_list'
+    paginate_by = 2
 
 
 class BookDetailView(generic.DetailView):
     model = Book
+
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 2
+
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
 
 
