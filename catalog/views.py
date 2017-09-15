@@ -32,9 +32,9 @@ def Index(request):
 class BookListView(generic.ListView):
     model = Book
     context_object_name = 'my_book_list'
-    queryset = Book.objects.filter(title__icontains='The')[:5]
 
-    def get_context_data(self, **kwargs):
-        context = super(BookListView, self).get_context_data(**kwargs)
 
-        return context
+class BookDetailView(generic.DetailView):
+    model = Book
+
+
